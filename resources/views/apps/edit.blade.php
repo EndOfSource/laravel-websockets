@@ -27,17 +27,17 @@
 
     <div class="card col-xs-12 mt-4">
         <div class="card-header">
-            <a class="btn btn-danger left" href="{{ route('websockets.admin.index') }}">Back</a>
+            <a class="btn btn-danger left" href="{{ route('laravel-websockets.websockets.admin.index') }}">Back</a>
         </div>
         <div class="card-body">
             @if ($app->id)
                 <h4 class="mb-4">Edit app</h4>
 
-                <form method="post" action="{{ route('websockets.admin.update', $app->id) }}">
+                <form method="post" action="{{ route('laravel-websockets.websockets.admin.update', $app->id) }}">
             @else
                 <h4 class="mb-4">Create app</h4>
 
-                <form method="post" action="{{ route('websockets.admin.store') }}">
+                <form method="post" action="{{ route('laravel-websockets.websockets.admin.store') }}">
             @endif
                 @csrf
 

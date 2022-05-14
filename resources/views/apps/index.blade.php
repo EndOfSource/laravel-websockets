@@ -23,11 +23,11 @@
         <div class="card-header">
             <div class="row">
                 <div class="col-12 col-sm-6">
-                    <form method="get" action="{{ route('websockets.admin.index') }}">
+                    <form method="get" action="{{ route('laravel-websockets.websockets.admin.index') }}">
                         <div class="input-group">
                             @if (!blank(request('q')))
                                 <div class="input-group-prepend">
-                                    <a href="{{ route('websockets.admin.index') }}" class="btn btn-outline-danger">X</a>
+                                    <a href="{{ route('laravel-websockets.websockets.admin.index') }}" class="btn btn-outline-danger">X</a>
                                 </div>
                             @endif
                             <input type="text" name="q" class="form-control" placeholder="Search..." value="{{ request('q', old('q')) }}" />
@@ -38,7 +38,7 @@
                     </form>
                 </div>
                 <div class="col-12 col-sm-6 text-right">
-                    <a class="btn btn-success" href="{{ route('websockets.admin.create') }}">Create app</a>
+                    <a class="btn btn-success" href="{{ route('laravel-websockets.websockets.admin.create') }}">Create app</a>
                 </div>
             </div>
         </div>
@@ -66,8 +66,8 @@
                         <td>{{ $app->enable_client_messages ? 'YES' : "NO" }}</td>
                         <td>{{ $app->enable_statistics ? 'YES' : "NO" }}</td>
                         <td>
-                            <a class="btn btn-block btn-primary" href="{{ route('websockets.admin.edit', ['app' => $app->id]) }}">Edit</a>
-                            <form method="post" action="{{ route('websockets.admin.destroy', ['app' => $app->id]) }}" onsubmit="return(confirm('Are you sure?'))">
+                            <a class="btn btn-block btn-primary" href="{{ route('laravel-websockets.websockets.admin.edit', ['app' => $app->id]) }}">Edit</a>
+                            <form method="post" action="{{ route('laravel-websockets.websockets.admin.destroy', ['app' => $app->id]) }}" onsubmit="return(confirm('Are you sure?'))">
                                 @csrf
                                 <button type="submit" class="btn btn-block mt-1 btn-danger">Delete</button>
                             </form>
